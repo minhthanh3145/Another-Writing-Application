@@ -1,0 +1,162 @@
+/* Body */
+
+.main-body-container {
+  padding-top: 25px;
+  padding-right: 100px;
+  padding-left: 100px;
+  width: 100%;
+}
+
+.body-container {
+  background-color: #eaecee;
+}
+
+.header-container {
+  background-color: white;
+  color: black;
+}
+
+.table-header {
+  background-color: white;
+  color: black;
+  border-bottom: 1px solid #eaecee;
+}
+
+/* Breadcum */
+.BreadcumView {
+  padding: 0px;
+  background-color: transparent;
+}
+
+/* File Chooser View */
+
+.FileChooserTabsContainer {
+  background-color: white;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.FileChooserTab {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Upload file view */
+
+#uploadfile {
+  padding-left: 15px;
+  padding-right: 25px;
+}
+
+#uploadFileNameInput {
+  width: 100%;
+  height: 100%;
+  padding-left: 10px;
+}
+
+#uploadFileButton {
+  width: 200px;
+  height: 100%;
+}
+
+.AlignItemsCenter {
+  display: flex;
+  align-items: center;
+}
+
+/* Document Title and Buttons */
+
+.DocumentTitleAndControlContainer {
+  background-color: white;
+  width: 100%;
+  padding-right: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.DocumentTitleAndControlContainer .DocumentTitle {
+  text-align: left;
+}
+
+.DocumentTitleAndControlContainer .btn-primary {
+  margin-left: 30px;
+  width: 200px;
+}
+
+/* Machine translation tabele and translation table */
+
+.SourceAndTranslationTableContainer {
+  width: 100%;
+  text-align: center;
+}
+
+.SourceAndTranslationTableContainer button {
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.table-wrapper {
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 250px;
+  overflow: auto;
+}
+/* Machine Translation table */
+
+.MachineTranslationLayoutContainer {
+  background-color: white;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  height: 400px;
+}
+
+/* Translation table */
+
+.TranslationLayoutContainer {
+  background-color: white;
+  padding: 0px;
+  table-layout: fixed;
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.TranslationLayoutContainer td:nth-child(1) {
+  width: 40%;
+}
+
+.TranslationLayoutContainer td:nth-child(2) {
+  padding: 0px;
+}
+
+.Hoverable tbody tr:hover {
+  background-color: #eaeded;
+  cursor: cell;
+}
+
+.TranslationLayoutContainer thead th {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.TranslationLayoutContainer form,
+textarea {
+  background-color: transparent;
+  padding: 5px;
+  border-width: 0;
+  width: 100%;
+  height: 100%;
+  resize: none;
+}
+
+.selected_sentence {
+  background-color: #e5e8e8;
+}
+
+/* Bootstrap */
