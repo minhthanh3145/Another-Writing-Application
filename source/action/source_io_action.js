@@ -15,11 +15,9 @@ let backend_url = "https://another-writing-application.herokuapp.com";
 // Add Source
 
 const addSourceAction = (state, e) => [
-  state,
+  { ...state, shouldShowSource: true },
   Http({
-    url:
-    backend_url + "/get_content?url=" +
-      encodeURIComponent(e.target.value),
+    url: backend_url + "/get_content?url=" + encodeURIComponent(e.target.value),
     options: {
       method: "GET",
     },

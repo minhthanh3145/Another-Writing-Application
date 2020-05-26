@@ -64,7 +64,7 @@ const emphasize = function (word, string) {
 };
 
 const OnTypeAction = function (state, e) {
-  try { 
+  try {
     let text = e.target.value;
     var doc = nlp(text);
     let subjects = doc.sentences().nouns().json();
@@ -185,6 +185,7 @@ const SideBar = (state) => (
         <div class="row">
           {CollapsableView(state, {
             viewClassName: "source-collapsable",
+            shouldShow: state.shouldShowSource,
             header: SourceToggle(state),
             content: [SourceInput(state), SourceList(state)],
           })}
@@ -227,7 +228,10 @@ const TopMenu = (state) => (
           </li>
           <li>
             You can run a local backend if you want. It's{" "}
-            <a href="https://github.com/minhthanh3145/another-writing-application" target="_blank">
+            <a
+              href="https://github.com/minhthanh3145/another-writing-application"
+              target="_blank"
+            >
               open-sourced
             </a>
             .
@@ -290,7 +294,10 @@ const CollapsableView = (state, props) => (
     <a data-toggle="collapse" href={"#collapsable-" + props.viewClassName}>
       {props.header}
     </a>
-    <div class="collapse" id={"collapsable-" + props.viewClassName}>
+    <div
+      class={"collapse " + (props.shouldShow ? "show" : "")}
+      id={"collapsable-" + props.viewClassName}
+    >
       {props.content}
     </div>
   </div>

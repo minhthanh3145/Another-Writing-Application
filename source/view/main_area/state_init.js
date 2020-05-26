@@ -7,4 +7,5 @@ export const StateInit = {
   references: {},
   sideBarToggled: false,
   isSavingNoteContent: false,
+  shouldShowSource: false,
 };
