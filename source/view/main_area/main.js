@@ -13,7 +13,7 @@ nlp.extend(nlpParagraphs);
 nlp.extend(nlpSentences);
 nlp.extend(nlpNgrams);
 
-const ReferenceContent = function (word, string) {
+const ReferenceContentInSearchFocusMode = function (word, string) {
   return nlp(string)
     .paragraphs()
     .json()
@@ -46,6 +46,10 @@ const ReferenceContent = function (word, string) {
       );
     });
 };
+
+const ReferenceContentInNormalMode = (word, string) => (
+  <p>{emphasize(word, string)}</p>
+);
 
 const emphasize = function (word, string) {
   if (!string || !word) {
@@ -90,9 +94,7 @@ const OnTypeAction = function (state, e) {
 };
 
 const SourceToggle = (state) => (
-  <button class="source-toggle btn btn-outline-primary btn-sm">
-    References
-  </button>
+  <button class="my-toggle btn btn-outline-primary btn-sm">References</button>
 );
 
 const SourceInput = (state) => (
@@ -170,7 +172,15 @@ const ReferenceList = (state) => (
               id={"collapsable-reference" + "-" + index}
             >
               <div class="card card-body">
-                {ReferenceContent(state.filter, RemoveMarkdown(value.content))}
+                {state.referenceSearchFocusMode
+                  ? ReferenceContentInSearchFocusMode(
+                      state.filter,
+                      RemoveMarkdown(value.content)
+                    )
+                  : ReferenceContentInNormalMode(
+                      state.filter,
+                      RemoveMarkdown(value.content)
+                    )}
               </div>
             </div>
           </ul>
@@ -195,11 +205,27 @@ const SideBar = (state) => (
         <hr />
         <div class="row">
           {SearchInput(state)}
+          {Object.keys(state.references).length > 0 &&
+            ReferenceReadingModeToggle(state)}
           {ReferenceList(state)}
         </div>
       </div>
     </div>
   </div>
+);
+
+const ReferenceReadingModeToggle = (state) => (
+  <button
+    class="my-toggle btn btn-outline-primary btn-sm"
+    onClick={(state) => ({
+      ...state,
+      referenceSearchFocusMode: !state.referenceSearchFocusMode,
+    })}
+  >
+    {state.referenceSearchFocusMode
+      ? "Switch to whole-text mode"
+      : "Switch to search-focus mode"}
+  </button>
 );
 
 const TopMenu = (state) => (

@@ -89,18 +89,17 @@ body,
   margin: 10px;
 }
 
-.source-toggle {
+.my-toggle {
   width: 100%;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
-.source-toggle:focus {
+.my-toggle:focus {
   outline: none;
   box-shadow: none;
 }
 
-.source-toggle:active,
-.source-toggle:hover {
+.my-toggle:active, .my-toggle:hover {
   background-color: whitesmoke !important;
   color: black !important;
 }
@@ -155,6 +154,6 @@ body,
   font-style: normal;
 }
 
-.social-media a {
+.social-media a{
   margin: 20px;
 }
