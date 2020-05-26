@@ -5,7 +5,7 @@ export const StateInit = {
   topics: [],
   sources: [],
   references: {},
-  sideBarToggled: false,
+  sideBarToggled: true,
   isSavingNoteContent: false,
   shouldShowSource: false,
   referenceSearchFocusMode: false,
