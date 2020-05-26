@@ -46,7 +46,7 @@ const ReferenceContent = function (word, string) {
       );
     });
 };
-
+ 
 const emphasize = function (word, string) {
   if (!string || !word) {
     return "";
