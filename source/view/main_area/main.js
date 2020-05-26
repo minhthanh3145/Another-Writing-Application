@@ -64,7 +64,7 @@ const emphasize = function (word, string) {
 };
 
 const OnTypeAction = function (state, e) {
-  try {
+  try { 
     let text = e.target.value;
     var doc = nlp(text);
     let subjects = doc.sentences().nouns().json();
