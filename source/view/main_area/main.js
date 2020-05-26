@@ -238,6 +238,13 @@ const TopMenu = (state) => (
           </li>
           <li>No markdown or styling. Just focus on getting the idea right.</li>
         </ul>
+        <div class='social-media'>
+          About me: 
+        <a href="https://github.com/minhthanh3145" target="_blank">
+          <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a href="https://dafuqisthatblog.wordpress.com/" target="_blank"><i class="fab fa-blogger fa-lg"></i></a>
+        </div>
       </p>
     </div>
   </div>

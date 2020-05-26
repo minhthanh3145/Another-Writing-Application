@@ -99,7 +99,8 @@ body,
   box-shadow: none;
 }
 
-.source-toggle:active, .source-toggle:hover {
+.source-toggle:active,
+.source-toggle:hover {
   background-color: whitesmoke !important;
   color: black !important;
 }
@@ -152,4 +153,8 @@ body,
 
 .unfiltered-word {
   font-style: normal;
+}
+
+.social-media a {
+  margin: 20px;
 }
