@@ -90,7 +90,9 @@ const OnTypeAction = function (state, e) {
 };
 
 const SourceToggle = (state) => (
-  <button class="source-toggle btn btn-outline-primary btn-sm">Sources</button>
+  <button class="source-toggle btn btn-outline-primary btn-sm">
+    References
+  </button>
 );
 
 const SourceInput = (state) => (
