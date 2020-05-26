@@ -349,7 +349,7 @@ const MainArea = (state) => (
     {(state.sideBarToggled && (
       <div class="row main-row">
         <div class="col-4">{SideBar(state)}</div>
-        <div class="col">{WritingArea(state)}</div>
+        {WritingArea(state)}
       </div>
     )) || (
       <div class="row main-row">
