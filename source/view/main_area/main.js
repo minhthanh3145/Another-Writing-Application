@@ -46,7 +46,7 @@ const ReferenceContent = function (word, string) {
       );
     });
 };
- 
+
 const emphasize = function (word, string) {
   if (!string || !word) {
     return "";
@@ -98,7 +98,7 @@ const SourceInput = (state) => (
     <input
       type="text"
       class="form-control"
-      placeholder="Add your writing sources here "
+      placeholder="Add your references here "
       aria-describedby="basic-addon1"
       onChange={SourceIOActions.AddSource}
     />
@@ -110,7 +110,7 @@ const SearchInput = (state) => (
     <input
       type="text"
       class="form-control"
-      placeholder="Search for relevant references"
+      placeholder="Search for relevant content"
       aria-describedby="basic-addon1"
       onInput={(state, e) =>
         ReferenceActions.SearchForTerm(state, e.target.value)
@@ -238,12 +238,14 @@ const TopMenu = (state) => (
           </li>
           <li>No markdown or styling. Just focus on getting the idea right.</li>
         </ul>
-        <div class='social-media'>
-          About me: 
-        <a href="https://github.com/minhthanh3145" target="_blank">
-          <i class="fab fa-github fa-lg"></i>
-        </a>
-        <a href="https://dafuqisthatblog.wordpress.com/" target="_blank"><i class="fab fa-blogger fa-lg"></i></a>
+        <div class="social-media">
+          About me:
+          <a href="https://github.com/minhthanh3145" target="_blank">
+            <i class="fab fa-github fa-lg"></i>
+          </a>
+          <a href="https://dafuqisthatblog.wordpress.com/" target="_blank">
+            <i class="fab fa-blogger fa-lg"></i>
+          </a>
         </div>
       </p>
     </div>
