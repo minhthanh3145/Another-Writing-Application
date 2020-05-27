@@ -8,6 +8,7 @@ import nlpNgrams from "compromise-ngrams";
 import { SourceIOActions } from "../../action/source_io_action";
 import { ReferenceActions } from "../../action/reference_actions";
 import { NoteActions } from "../../action/note_action";
+import marked from "marked";
 
 nlp.extend(nlpParagraphs);
 nlp.extend(nlpSentences);
@@ -228,6 +229,40 @@ const ReferenceReadingModeToggle = (state) => (
   </button>
 );
 
+const MarkDownModal = (state) => (
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Markdown Reveal</h4>
+        </div>
+        <div class="modal-body">
+          <p innerHTML={marked(state.noteContent)}></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const MarkdownRevealButton = (state) => (
+  <div>
+    <button
+      class="btn btn-link"
+      data-toggle="modal"
+      data-target="#myModal"
+      href="#"
+    >
+      Preview markdow
+    </button>
+    {MarkDownModal(state)}
+  </div>
+);
+
 const TopMenu = (state) => (
   <div class="top-menu">
     <a data-toggle="collapse" href="#collapsable-top-menu">
@@ -236,15 +271,17 @@ const TopMenu = (state) => (
     <div class="control-menu">
       <div class="container">
         <div class="row">
-          <div class="col-4">{SideBarToggle(state)}</div>
-          <div class="col-3">{SaveStatus(state)}</div>
+          <div class="col">{SideBarToggle(state)}</div>
+          <div class="col">{SaveStatus(state)}</div>
           <div class="col">{ExportDataButton(state)}</div>
+          <div class="col">{MarkdownRevealButton(state)}</div>
         </div>
       </div>
     </div>
     <div class="collapse" id="collapsable-top-menu">
       <p>
-        Gather your writing sources into one place and search for relevant references.
+        Gather your writing sources into one place and search for relevant
+        references.
       </p>
       <p>
         <ul>
