@@ -102,7 +102,7 @@ const SourceInput = (state) => (
     <input
       type="text"
       class="form-control"
-      placeholder="Add your references here "
+      placeholder="Add your sources here "
       aria-describedby="basic-addon1"
       onChange={SourceIOActions.AddSource}
     />
@@ -114,7 +114,7 @@ const SearchInput = (state) => (
     <input
       type="text"
       class="form-control"
-      placeholder="Search for relevant content"
+      placeholder="Search for relevant references"
       aria-describedby="basic-addon1"
       onInput={(state, e) =>
         ReferenceActions.SearchForTerm(state, e.target.value)
@@ -244,12 +244,11 @@ const TopMenu = (state) => (
     </div>
     <div class="collapse" id="collapsable-top-menu">
       <p>
-        Gather your writing references into one place and search for relevant
-        content.
+        Gather your writing sources into one place and search for relevant references.
       </p>
       <p>
         <ul>
-          <li>Your writing and references are saved locally.</li>
+          <li>Your writing and sources are saved locally.</li>
           <li>
             Backend is used to only return content of the references. There's no
             database.
@@ -264,10 +263,9 @@ const TopMenu = (state) => (
             </a>
             .
           </li>
-          <li>No markdown or styling. Just focus on getting the idea right.</li>
+          <li>No markdown or styling, just focus on getting the idea right.</li>
         </ul>
         <div class="social-media">
-          About me:
           <a href="https://github.com/minhthanh3145" target="_blank">
             <i class="fab fa-github fa-lg"></i>
           </a>
