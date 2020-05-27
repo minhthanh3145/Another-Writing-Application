@@ -10,7 +10,10 @@ nlp.extend(nlpParagraphs);
 nlp.extend(nlpSentences);
 
 let db = new PouchDB("awa-db-1");
-let backend_url = "https://another-writing-application.herokuapp.com";
+let backend_url = "http://another-writing-application.eu.openode.io";
+
+var expression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+var regex = new RegExp(expression);
 
 // Add Source
 
