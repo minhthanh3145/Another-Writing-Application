@@ -69,29 +69,20 @@ const emphasize = function (word, string) {
 };
 
 const OnTypeAction = function (state, e) {
-  try {
-    let text = e.target.value;
-    var doc = nlp(text);
-    let subjects = doc.sentences().nouns().json();
-    return [
-      {
+  return [
+    {
+      ...state,
+      isSavingNoteContent: true,
+    },
+    NoteActions.SaveNoteContentEffect({
+      content: e.target.value,
+      action: (state, result) => ({
         ...state,
-        topics: subjects.map((subject) => subject.text),
-        isSavingNoteContent: true,
-      },
-      NoteActions.SaveNoteContentEffect({
-        content: e.target.value,
-        action: (state, result) => ({
-          ...state,
-          noteContent: result,
-          isSavingNoteContent: false,
-        }),
+        noteContent: result,
+        isSavingNoteContent: false,
       }),
-    ];
-  } catch (ex) {
-    console.log(ex);
-  }
-  return state;
+    }),
+  ];
 };
 
 const SourceToggle = (state) => (
@@ -257,8 +248,7 @@ const MarkdownRevealButton = (state) => (
       data-target="#myModal"
       href="#"
     >
-      <i class="fab fa-markdown">
-      </i>
+      <i class="fab fa-markdown"></i>
       <span class="side-bar-label">Preview markdow</span>
     </button>
     {MarkDownModal(state)}
