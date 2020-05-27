@@ -68,19 +68,37 @@ const emphasize = function (word, string) {
   });
 };
 
+const DelayEffect = (props) => [
+  function (dispatch, props) {
+    setTimeout(
+      function () {
+        dispatch(props.action);
+      },
+      props.milisecond ? props.milisecond : 1000
+    );
+  },
+  props,
+];
+
 const OnTypeAction = function (state, e) {
   return [
-    {
-      ...state,
-      isSavingNoteContent: true,
-    },
+    state,
     NoteActions.SaveNoteContentEffect({
       content: e.target.value,
-      action: (state, result) => ({
-        ...state,
-        noteContent: result,
-        isSavingNoteContent: false,
-      }),
+      action: (state, result) => [
+        {
+          ...state,
+          noteContent: result,
+          isSavingNoteContent: true,
+        },
+        DelayEffect({
+          milisecond: 1000,
+          action: (state) => ({
+            ...state,
+            isSavingNoteContent: false,
+          }),
+        }),
+      ],
     }),
   ];
 };
@@ -140,6 +158,7 @@ const SourceList = (state) => (
 const ReferenceList = (state) => (
   <div class="reference-list">
     <div class="fluid-container">
+      {console.log("Rendered")}
       <div class="row">
         {Object.entries(state.references).map(([key, value], index) => (
           <ul class="list-group col-12">
