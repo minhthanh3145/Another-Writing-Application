@@ -242,7 +242,7 @@ const TopMenu = (state) => (
         </div>
       </div>
     </div>
-    <div class="collapse show" id="collapsable-top-menu">
+    <div class="collapse" id="collapsable-top-menu">
       <p>
         Gather your writing references into one place and search for relevant
         content.
