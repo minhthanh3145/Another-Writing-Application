@@ -12,7 +12,7 @@
     "compromise-sentences": "0.0.5",
     "hyperapp": "^2.0.4",
     "hyperapp-fx": "^2.0.0-beta.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "marked": "^1.1.0",
     "pouchdb-browser": "^7.2.1",
     "pouchdb-find": "^7.2.1",
