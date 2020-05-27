@@ -9,4 +9,5 @@ export const StateInit = {
   isSavingNoteContent: false,
   shouldShowSource: false,
   referenceSearchFocusMode: true,
+  feedback: "",
 };

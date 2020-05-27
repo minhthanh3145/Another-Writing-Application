@@ -166,3 +166,15 @@ body,
 .social-media a {
   margin: 5px;
 }
+
+#feedback-textarea {
+  resize: none;
+  padding: 30px;
+  width: 100%;
+  height: 300px;
+  overflow: auto;
+}
+
+#feedback-textarea:focus {
+  outline-width: 0px;
+}

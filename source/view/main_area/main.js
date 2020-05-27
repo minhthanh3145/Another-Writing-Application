@@ -8,6 +8,7 @@ import nlpNgrams from "compromise-ngrams";
 import { SourceIOActions } from "../../action/source_io_action";
 import { ReferenceActions } from "../../action/reference_actions";
 import { NoteActions } from "../../action/note_action";
+import { FeedbackActions } from "../../action/feedback_action.js";
 import marked from "marked";
 
 nlp.extend(nlpParagraphs);
@@ -158,7 +159,6 @@ const SourceList = (state) => (
 const ReferenceList = (state) => (
   <div class="reference-list">
     <div class="fluid-container">
-      {console.log("Rendered")}
       <div class="row">
         {Object.entries(state.references).map(([key, value], index) => (
           <ul class="list-group col-12">
@@ -240,7 +240,7 @@ const ReferenceReadingModeToggle = (state) => (
 );
 
 const MarkDownModal = (state) => (
-  <div id="myModal" class="modal fade" role="dialog">
+  <div id="markdown-modal" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -264,13 +264,66 @@ const MarkdownRevealButton = (state) => (
     <button
       class="btn btn-link"
       data-toggle="modal"
-      data-target="#myModal"
+      data-target="#markdown-modal"
       href="#"
     >
       <i class="fab fa-markdown"></i>
       <span class="side-bar-label">Preview markdow</span>
     </button>
     {MarkDownModal(state)}
+  </div>
+);
+
+const FeedbackButton = (state) => (
+  <div>
+    <button
+      class="btn btn-link"
+      data-toggle="modal"
+      data-target="#feedback-modal"
+      href="#"
+    >
+      <i class="fab fa-markdown"></i>
+      <span class="side-bar-label">Give me feedback</span>
+    </button>
+    {FeedbackModal(state)}
+  </div>
+);
+
+const FeedbackModal = (state) => (
+  <div id="feedback-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Tell me your feedback</h4>
+        </div>
+        <div class="modal-body">
+          <h6>This will be sent to my email, anonymously</h6>
+          <p>Please let me know: </p>
+          <ol>
+            <li>Do you like sidebar on the right or on the left ?</li>
+            <li>Do you think Import Data functionality is necessary</li>
+            <li>
+              What are your other feedbacks so that I can make this better
+            </li>
+          </ol>
+          <textarea id="feedback-textarea"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-primary"
+            onClick={(state) =>
+              FeedbackActions.SendFeedback(state, getCurrentFeedbackContent())
+            }
+          >
+            Send
+          </button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 );
 
@@ -286,6 +339,7 @@ const TopMenu = (state) => (
           <div class="col">{SaveStatus(state)}</div>
           <div class="col">{ExportDataButton(state)}</div>
           <div class="col">{MarkdownRevealButton(state)}</div>
+          <div class="col">{FeedbackButton(state)}</div>
         </div>
       </div>
     </div>
@@ -328,6 +382,14 @@ const TopMenu = (state) => (
 
 const getCurrentNoteContent = function () {
   let textarea = document.getElementById("main-textarea");
+  if (textarea) {
+    return textarea.value;
+  }
+  return "";
+};
+
+const getCurrentFeedbackContent = function () {
+  let textarea = document.getElementById("feedback-textarea");
   if (textarea) {
     return textarea.value;
   }
