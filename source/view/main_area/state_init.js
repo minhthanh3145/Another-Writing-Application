@@ -8,5 +8,5 @@ export const StateInit = {
   sideBarToggled: true,
   isSavingNoteContent: false,
   shouldShowSource: false,
-  referenceSearchFocusMode: false,
+  referenceSearchFocusMode: true,
 };

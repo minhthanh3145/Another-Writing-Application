@@ -257,7 +257,9 @@ const MarkdownRevealButton = (state) => (
       data-target="#myModal"
       href="#"
     >
-      Preview markdow
+      <i class="fab fa-markdown">
+      </i>
+      <span class="side-bar-label">Preview markdow</span>
     </button>
     {MarkDownModal(state)}
   </div>
