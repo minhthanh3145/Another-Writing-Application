@@ -346,7 +346,10 @@ const TopMenu = (state) => (
     <div class="collapse" id="collapsable-top-menu">
       <p>
         Gather your writing sources into one place and search for relevant
-        references.
+        references.{" "}
+        <a href="https://dafuqisthatblog.wordpress.com/2020/05/27/why-i-built-another-writing-application/">
+          Check out the story behind here.
+        </a>
       </p>
       <p>
         <ul>
