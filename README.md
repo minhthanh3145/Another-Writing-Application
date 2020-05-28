@@ -34,7 +34,7 @@ What is lacking is a workspace where I can search for and read relevant sources 
 
 ![](https://dafuqisthatblog.files.wordpress.com/2020/05/screen-shot-2020-05-27-at-11.32.29-pm-2.png?w=1024)
 
-For taking notes, I used [Roam Research](https://roamresearch.com/) obessively. However, Roam is a note-taking tool, and it's not a writing workspace that serves the purpose of gathering sources and experiment with thoughts. On the opposite, you have to be mindful what to install into Roam, becaus it is designed to ff , if you're following the [Zettlkasten method](https://writingcooperative.com/zettelkasten-how-one-german-scholar-was-so-freakishly-productive-997e4e0ca125).
+For taking notes, I used [Roam Research](https://roamresearch.com/) obessively. However, Roam is a note-taking tool, and it's not a writing workspace that serves the purpose of gathering sources and experiment with thoughts. On the opposite, you have to be mindful what to install into Roam, becaus it is designed to build a long-lasting repository , if you're following the [Zettlkasten method](https://writingcooperative.com/zettelkasten-how-one-german-scholar-was-so-freakishly-productive-997e4e0ca125).
 
 **Another Writing Application** is built as a place where you can dump your disorganized thoughts, organize them and then dump the organized thought into Roam or other places. In fact, I wrote this article using _AWA_, with 7 references. It is not intended to replace anything, just an attempt in making writing, and consequently thinking, more convenient.
 
