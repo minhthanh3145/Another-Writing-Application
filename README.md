@@ -1,4 +1,4 @@
-# minhthanh3145.github.io 
+# Another Writing Application
 
 Front-end for [Another Writing Application](https://another-writing-application.netlify.app/). Backend is at [here](https://github.com/minhthanh3145/Another-Writing-Application-Backend). 
 
