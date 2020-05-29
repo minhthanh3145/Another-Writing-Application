@@ -20,7 +20,7 @@ Front-end for [Another Writing Application](https://another-writing-application.
 
 ## Local
 
-You need NodeJS and that's it. Clone this repo and hit `npm install` and then `npm start`, this will start the application on your localhost.
+You need `npm` and Node. Clone this repo and hit `npm install` and then `npm start`, this will start the application on your localhost.
 
 Clone the [Backend Repository]((https://github.com/minhthanh3145/Another-Writing-Application-Backend), hit `npm install` and `npm start`. This will start the backend on your localhost.
 
