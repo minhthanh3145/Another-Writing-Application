@@ -1,8 +1,15 @@
 # Another Writing Application
 
-Front-end for [Another Writing Application](https://another-writing-application.netlify.app/). Backend is at [here](https://github.com/minhthanh3145/Another-Writing-Application-Backend). 
+Front-end for [Another Writing Application](https://another-writing-application.netlify.app/). 
+
+<img width="1438" alt="Screen Shot 2020-05-28 at 1 14 02 AM" src="https://user-images.githubusercontent.com/16775806/83236444-bc675180-a1bd-11ea-92fe-398a214aefcd.png">
+
+
+Backend is at [here](https://github.com/minhthanh3145/Another-Writing-Application-Backend). 
 
 [Read the full story here](https://dafuqisthatblog.wordpress.com/2020/05/27/why-i-built-another-writing-application/)
+
+
 
 ## Features
 - Local storage for your writings and sources.
