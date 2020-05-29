@@ -15,8 +15,8 @@ Front-end for [Another Writing Application](https://another-writing-application.
 
 ## Stack
 
-Backend: NodeJS, Express, Mercury Parser.
-Frontend: Hyperapp, Bootstrap, Compromise, PouchDB
+- Backend: NodeJS, Express, Mercury Parser.
+- Frontend: Hyperapp, Bootstrap, Compromise, PouchDB
 
 ## Local
 
